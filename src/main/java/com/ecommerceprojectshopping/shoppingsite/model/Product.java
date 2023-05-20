@@ -2,18 +2,27 @@ package com.ecommerceprojectshopping.shoppingsite.model;
 
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
+import org.springframework.context.annotation.Scope;
 
 import java.math.BigDecimal;
 
 @Entity
 @Data
+@Builder
 @Table(name="product")
+@Scope("session")
+@AllArgsConstructor
+@NoArgsConstructor
 public class Product {
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     private Long id;
     private String name;
+    private String description_of_product;
     //so the product class has a many to one relationship with category
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "category_id", nullable = true)
@@ -29,7 +38,7 @@ public class Product {
     //entity will be loaded from the database only when it is explicitly accessed for the first time.
     private BigDecimal price;
     @Column(name="image")
-    private String imageUrl;
+    private String image_of_product;
 
 
 }

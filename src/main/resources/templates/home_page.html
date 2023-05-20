@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<script src="http://localhost:35729/livereload.js"></script>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link th:href="@{/css/login.css}" rel="stylesheet"/>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'/>
+    <title>Login Page</title>
+</head>
+
+<body class = "login">
+<div class="box">
+    <div class="container">
+        <div class="top">
+            <header>Login</header>
+        </div>
+
+        <form action="#" th:action="@{/login}" th:object="${user}" method="post">
+            <div class="input-field">
+                <input type="text" th:field="*{username}"  class="input" placeholder="Username"/>
+                <i class='bx bx-user' ></i>
+            </div>
+            <div class="input-field">
+                <input type="password" th:field="*{password}"  class="input" placeholder="Password"/>
+                <i class='bx bx-lock-alt'></i>
+            </div>
+            <div>
+                <label th:if="${loginError}" class="error">Wrong user or password!</label>
+            </div>
+
+            <div class="input-field">
+                <input type="submit" class="submit" value="Login"/>
+                <input type="reset" class="submit" value="Reset" />
+            </div>
+            <div class="bottom">
+                <label><a href="#">Forgot password?</a></label>
+            </div>
+        </form>
+    </div>
+</div>
+</body>
+</html>
