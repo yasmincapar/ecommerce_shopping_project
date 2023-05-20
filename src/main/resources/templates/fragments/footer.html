@@ -1,0 +1,22 @@
+<!doctype HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<!--Footer Fragment: The footer fragment, on the other hand, contains
+elements that appear at the bottom of a web page. It often includes information like copyright notices,-->
+<head>
+</head>
+<body>
+<div th:fragment="footer">
+  <div class="container">
+    <footer>
+      <span th:text="#{footer.copyright}"></span>
+
+
+    </footer>x
+  </div>
+  <script type="text/javascript" th:src="@{webjars/jquery/3.3.1-1/jquery.min.js}"></script>
+  <script type="text/javascript" th:src="@{webjars/bootstrap/4.1.0/js/bootstrap.min.js}"></script>
+  <script type="text/javascript" th:src="@{/js/lang.js}"></script>
+</div>
+</body>
+
+</html>
