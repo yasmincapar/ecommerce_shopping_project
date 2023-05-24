@@ -19,4 +19,15 @@ private final ProductRepository productRepository;
     public Long productsCount() {
         return productRepository.count();
     }
+
+    /**
+     * In this save_product method which is type Product is returning a new product
+     * We are saving this newly created product into the database
+     * @param product
+     * @return
+     */
+    public Product add_product(Product product) {
+        return productRepository.save(product);
+
+    }
 }

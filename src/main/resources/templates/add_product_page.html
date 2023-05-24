@@ -1,0 +1,50 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+<head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link th:href="@{/css/style.css}" rel="stylesheet"/>
+    <link th:href="@{/css/sidenavigation.css}" rel="stylesheet"/>
+</head>
+<body>
+<div class="sidenav">
+    <a style="color: #2ecc71" href="/productpagecontroller">Categories:</a>
+    <a href="#">Olive Oil</a>
+    <a href="#">Olives</a>
+    <hr>
+    <a style="color: #2ecc71" href="/">Home Page</a>
+    <hr>
+</div>
+<div class="container">
+<h1>Add Product</h1>
+<form action="#" th:action="@{/addnewproduct}" method="post" th:object="${product}">
+    <label for="product_name">Name of product:</label>
+    <input type="text" id="product_name" name="product_name" th:field="*{product_name}" required><br>
+    <label for="description">product description:</label>
+    <input type="text" id="description" name="description" th:field="*{description_of_product}" required><br>
+    </select><br>
+    <label for="category">Category:</label>
+    <select id="category" name="category">
+        <option value="">Select a category</option>
+        <option th:each="category : ${categories}"
+                th:value="${category.id}"
+                th:text="${category.categoryName}">
+        </option>image_of_product
+    </select>
+    <br>
+   <!-- <label for="images">Image of product:</label>
+    <input type="text" id="images" name="images" th:field="*{image_of_product}" required><br>-->
+    <!--with this image we want to take it from our computer and display on computer
+    but this image has to be in the images file-->
+    <label for="price">Price of product:</label>
+    <input type="text" id="price" name="price" th:field="*{price}" required><br>
+    <td class="tdata">
+        <div class = "add-new-form">
+            <input type="file" th:field="*{image_of_product}" class="input" id="image_of_product" placeholder="Product image">
+            <span th:if="${#fields.hasErrors('image_of_product')}" th:errors="*{image_of_product}" class="text-danger"></span>
+        </div>
+    </td>
+    <button type="submit">Save</button>
+</form>
+</div>
+</body>
+</html>

@@ -21,7 +21,7 @@ public class Product {
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     private Long id;
-    private String name;
+    private String product_name;
     private String description_of_product;
     //so the product class has a many to one relationship with category
     @ManyToOne(fetch = FetchType.LAZY)

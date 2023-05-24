@@ -29,7 +29,8 @@ public class HomePageController {
         //This makes the user object available to the view template for rendering.
         model.addAttribute("categories", categoryservice.findAll());
         model.addAttribute("user",user);
-        return "practice_homepage";
+        return "main_homepage";
     }
+
 
 }

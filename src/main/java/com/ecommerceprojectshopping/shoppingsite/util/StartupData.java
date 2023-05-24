@@ -32,8 +32,8 @@ public class StartupData implements CommandLineRunner {
         userRepository1.save(User.builder().id(2).email("yasmin@admin.com").username("yasmin").password("1234").gender(Gender.FEMALE).confirmPassword("1234").role(Role.USER).build());
         categoryRepository.save(Category.builder().id(3).categoryName("Olive").build());
         categoryRepository.save(Category.builder().id(4).categoryName("OliveOil").build());
-        productRepository.save(Product.builder().id(1L).price(BigDecimal.valueOf(24)).name("Green Olives").category(categoryRepository.findByCategoryName("Olive")).image_of_product("images/green_olives.webp").description_of_product("best olive oil ever").build());
-        productRepository.save(Product.builder().id(2L).price(BigDecimal.valueOf(26)).name("Black Olives").category(categoryRepository.findByCategoryName("Olive")).image_of_product("images/blackolives.jpg").description_of_product("best olive oil ever").build());
+        productRepository.save(Product.builder().id(1L).price(BigDecimal.valueOf(24)).product_name("Green Olives").category(categoryRepository.findByCategoryName("Olive")).image_of_product("images/green_olives.webp").description_of_product("best olive oil ever").build());
+        productRepository.save(Product.builder().id(2L).price(BigDecimal.valueOf(26)).product_name("Black Olives").category(categoryRepository.findByCategoryName("Olive")).image_of_product("images/blackolives.jpg").description_of_product("best olive oil ever").build());
      //   productRepository.save(Product.builder().id(3L).price(BigDecimal.valueOf(32)).category(categoryRepository.findByCategoryName("Olive")).name("Olive Oil 3").image_of_product("images/oliveoil1.jpg").description_of_product("best olive oil ever").build());
     //    productRepository.save(Product.builder().id(4L).price(BigDecimal.valueOf(28)).category(categoryRepository.findByCategoryName("Olive")).name("Olive Oil 4").image_of_product("images/anotheroliveoil.jpg").description_of_product("best olive oil ever").build());
 
