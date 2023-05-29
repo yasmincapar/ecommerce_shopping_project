@@ -6,6 +6,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
@@ -28,6 +29,12 @@ private final ProductRepository productRepository;
      */
     public Product add_product(Product product) {
         return productRepository.save(product);
+
+    }
+
+
+    public void deleteproductbyid(Integer id) {
+        productRepository.findById(id);
 
     }
 }

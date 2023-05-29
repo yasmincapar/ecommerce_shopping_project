@@ -12,7 +12,10 @@
   <a href="#">Olives</a>
   <hr>
   <a style="color: #2ecc71" href="/productpagecontroller">Add a new product</a>
-  </div>
+  <hr>
+  <a style="color: #2ecc71" href="/view_all_products_from_database">View all products:</a>
+
+</div>
 <div class="container">
 
   <div class="row">
@@ -25,6 +28,12 @@
       </div>
         <div class="card-footer">
           <p th:text="${product.getPrice()}"></p>
+        </div>
+        <div class="card-footer">
+
+          <td><a th:href="@{/delete_product/{id}(id=${user.id})}" class="btn btn-primary">delete</a></td>
+
+        </div>
         </div>
       </div>
         </div>
